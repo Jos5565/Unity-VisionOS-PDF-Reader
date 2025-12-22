@@ -6,8 +6,11 @@
 
 ## 작업 방법
 > "Goolge pdfium" 을 타겟으로 라이브러리가 구성되어 있는 것을 확인.
+> 
 > pdfium의 ios ARM64 라이브러리를 활용하여 환경구성을 "visionos" 로 변경하여 빌드 한다면, 같은 ARM64 환경의 Vision os에서도 사용 할 수 있을 것 같다는 생각이 듬.
+>
 > Ninja 를 이용한 Static Library 빌드 시작.
+>
 > 빌드된 Static Library를 Unity 환경에 적용하여, Vision Pro 에서 구동되는 것을 확인.
 
 ## 적용 방법 
