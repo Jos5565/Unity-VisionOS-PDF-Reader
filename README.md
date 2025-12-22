@@ -28,4 +28,7 @@
 > <img width="785" height="325" alt="image" src="https://github.com/user-attachments/assets/254465ef-2816-4ce1-938f-2c0a4c9f5283" />
 
 
+## 빌드 과정 
+> <img width="805" height="158" alt="image" src="https://github.com/user-attachments/assets/f5c1b22d-1a58-48e2-8f2f-8684d23b8705" />
+>
 
