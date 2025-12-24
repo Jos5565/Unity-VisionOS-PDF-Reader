@@ -45,14 +45,21 @@ ninja -C out pdfium
 
 ### [Build libc++.a]
 1. libc++ .o 파일 만들기
+
 ninja -C out libc++  
+
 2. libc++ 빌드에 사용된 모든 객체 파일(.o)을 찾아서 리스트업
+   
 find obj/buildtools/third_party/libc++ -name "*.o" > libcxx_files.txt
+
 3. 찾은 .o 파일들을 하나의 정적 라이브러리로 묶기
+   
 libtool -static -o libc++_final.a -filelist libcxx_files.txt
 
 ### [Build libc++abi.a]
 1. 객체 파일 리스트업
+   
 find obj/buildtools/third_party/libc++abi -name "*.o" > libcxxabi_files.txt
 2. 진짜 라이브러리로 병합
+
 libtool -static -o libc++abi_final.a -filelist libcxxabi_files.txt
