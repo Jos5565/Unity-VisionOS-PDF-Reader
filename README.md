@@ -32,7 +32,7 @@
 > 
 pdfium 폴더로 이동 후. 
 ### [Tool Setup]
-export PATH="$PATH:/Volumes/JosMac/Jos/Vision OS/pdfium/depot_tools"
+export PATH="$PATH:{LOCAL PATH}/depot_tools"
 
 ### [Build libpdfium.a]
 1. Build Setting gn 명령어
