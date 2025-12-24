@@ -36,8 +36,11 @@ export PATH="$PATH:/Volumes/JosMac/Jos/Vision OS/pdfium/depot_tools"
 
 ### [Build libpdfium.a]
 1. Build Setting gn 명령어
+ 
 gn gen out --args="target_os=\"ios\" target_cpu=\"arm64\" target_environment=\"visionos\" use_custom_libcxx=true pdf_use_partition_alloc=false pdf_enable_v8=false pdf_enable_xfa=false pdf_is_standalone=true pdf_is_complete_lib=true is_debug=false use_blink=false ios_enable_code_signing=false use_partition_alloc=false use_allocator_shim=false "
-2. pdfium 라이브러리 생성 
+
+2. pdfium 라이브러리 생성
+
 ninja -C out pdfium
 
 ### [Build libc++.a]
