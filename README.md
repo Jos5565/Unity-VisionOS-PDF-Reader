@@ -28,7 +28,31 @@
 > <img width="785" height="325" alt="image" src="https://github.com/user-attachments/assets/254465ef-2816-4ce1-938f-2c0a4c9f5283" />
 
 
-## 빌드 과정 
-> <img width="805" height="158" alt="image" src="https://github.com/user-attachments/assets/f5c1b22d-1a58-48e2-8f2f-8684d23b8705" />
->
+## Library Build Process
+> 
+pdfium 폴더로 이동 후. 
 
+export PATH="$PATH:/Volumes/JosMac/Jos/Vision OS/pdfium/depot_tools"
+
+[Build libpdfium.a]
+# 1. Build Setting gn 명령어
+gn gen out --args="target_os=\"ios\" target_cpu=\"arm64\" target_environment=\"visionos\" use_custom_libcxx=true pdf_use_partition_alloc=false pdf_enable_v8=false pdf_enable_xfa=false pdf_is_standalone=true pdf_is_complete_lib=true is_debug=false use_blink=false ios_enable_code_signing=false use_partition_alloc=false use_allocator_shim=false "
+
+# 2. pdfium 라이브러리 생성 
+ninja -C out pdfium
+
+[Build libc++.a]
+# 1. libc++ .o 파일 만들기
+ninja -C out libc++  
+# 2. libc++ 빌드에 사용된 모든 객체 파일(.o)을 찾아서 리스트업
+find obj/buildtools/third_party/libc++ -name "*.o" > libcxx_files.txt
+
+# 3. 찾은 .o 파일들을 하나의 정적 라이브러리로 묶기
+libtool -static -o libc++_final.a -filelist libcxx_files.txt
+
+[Build libc++abi.a]
+# 1. 객체 파일 리스트업
+find obj/buildtools/third_party/libc++abi -name "*.o" > libcxxabi_files.txt
+
+# 2. 진짜 라이브러리로 병합
+libtool -static -o libc++abi_final.a -filelist libcxxabi_files.txt
