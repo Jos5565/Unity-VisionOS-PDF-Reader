@@ -4,14 +4,14 @@
 >
 >  직접 만든 이유 : PDF Renderer 가 Vision OS 를 타겟한 Plugin(.dll)을 제공하지 않기에.
 
-## 작업 방법
+## 작업 진행
 > "Goolge pdfium" 을 타겟으로 라이브러리가 구성되어 있는 것을 확인.
 > 
 > pdfium의 ios ARM64 라이브러리를 활용하여 환경구성을 "visionos" 로 변경하여 빌드 한다면, 같은 ARM64 환경의 Vision os에서도 사용 할 수 있을 것 같다는 생각이 듬.
 >
 > Ninja 를 이용한 Static Library 빌드 시작.
 >
-> 빌드된 Static Library를 Unity 환경에 적용하여, Vision Pro 에서 구동되는 것을 확인.
+> 빌드된 Static Library를 Unity 환경에 적용하여, Vision Pro 에서 성공적으로 작동하는 것을 확인함. 
 
 ## 적용 방법 
 > 1. 기존 PDF Renderer/Paroxe/PDFRenderer/Plugins/ 경로에 "VisionOS" 폴더 추가 후, .a Library 파일을 해당 폴더에 삽입.
