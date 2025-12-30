@@ -1,8 +1,11 @@
 ## Unity VisionOS Pdf Renderer
 
 > 기본 에셋 : [Paraxe/PDF Reader AssetStore](https://assetstore.unity.com/packages/tools/gui/pdf-renderer-32815)
+> 정상적인 구동을 위해서는 위의 에셋을 구매 후 활용해야함.
 >
->  직접 만든 이유 : PDF Renderer 가 Vision OS 를 타겟한 Plugin(.dll)을 제공하지 않기에.
+>  직접 만든 이유 : PDF Renderer 가 Vision OS 를 타겟한 Plugin(.dll)을 제공하지 않기 때문에.
+>
+
 
 ## 작업 진행
 > "Goolge pdfium" 을 타겟으로 라이브러리가 구성되어 있는 것을 확인.
